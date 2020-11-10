@@ -1,0 +1,1 @@
+# Nvim minimal Settings
