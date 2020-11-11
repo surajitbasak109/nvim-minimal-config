@@ -1,35 +1,4 @@
-call plug#begin("~/.vim/plugged")
-	" Plugin Section
-	" Theme
-	Plug 'dracula/vim'
-
-	"File Explorer
-	Plug 'scrooloose/nerdtree'
-	Plug 'ryanoasis/vim-devicons'
-
-	" File Searching
-	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-	Plug 'junegunn/fzf.vim'
-
-	" Tailwind CSS
-	Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
-
-	" Phpactor
-	Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
-
-	" IntelliSense and Syntax Highlighting
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-cssmodules', 'coc-eslint', 'coc-explorer', 'coc-phpactor', 'coc-phpls', 'coc-stylelint', 'coc-snippets', 'coc-sql', 'coc-tailwindcss', 'coc-pairs', 'coc-yank']
-
-	Plug 'ggreer/the_silver_searcher'
-
-	"TypeScript and TSX Support
-	Plug 'leafgarland/typescript-vim'
-	Plug 'peitalin/vim-jsx-typescript'
-
-	" Vim Snippet
-	Plug 'honza/vim-snippets'
-call plug#end()
+source ~/AppData/Local/nvim/plugins.vim
 
 " Config Section
 
@@ -124,7 +93,8 @@ nmap <leader>w :w<cr>
 set pastetoggle=<leader>v
 
 " edit ~/.config/nvim/init.vim
-map <leader>ev :e! ~/.config/nvim/init.vim<cr>
+map <leader>ev :e! ~/AppData/Local/nvim/init.vim<cr>
+map <leader>ep :e! ~/AppData/Local/nvim/plugins.vim<cr>
 " edit gitconfig
 map <leader>eg :e! ~/.gitconfig<cr>
 
@@ -334,6 +304,48 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
+"Easy navigate using alt and
+nmap <silent> <leader>k :wincmd k<CR>
+nmap <silent> <leader>j :wincmd j<CR>
+nmap <silent> <leader>h :wincmd h<CR>
+nmap <silent> <leader>l :wincmd l<CR>
+
+""""""""""""""""""""""""""""""
+" => Visual mode related
+" """"""""""""""""""""""""""""""
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+
+" Useful mappings for managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
+
+" Let 'tl' toggle between this and the last accessed tab
+let g:lasttab = 1
+nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
+
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Misc
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remove the Windows ^M - when the encodings gets messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+map <leader>o :BufExplorer<cr>
+
+
 " File Search config
 nnoremap <C-p> :FZF<CR>
 let g:fzf_action = {
@@ -368,3 +380,15 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NERDCommenter
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+vmap ++ <plug>NERDCommenterToggle
+nmap ++ <plug>NERDCommenterToggle
+
+""""""""""""""""""""""""""""""
+" => Emmet
+""""""""""""""""""""""""""""""
+" Emmet
+let g:user_emmet_leader_key=','
