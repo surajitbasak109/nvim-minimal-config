@@ -59,4 +59,13 @@ call plug#begin("~/.vim/plugged")
 
   Plug 'rodrigore/coc-tailwind-intellisense', { 'do': 'npm install' }
 
+  " Golden Ratio for automatic resizing
+  Plug 'roman/golden-ratio'
+
+  "Multiple Cursor
+  Plug 'terryma/vim-multiple-cursors'
+
+  " Lightline
+  Plug 'itchyny/lightline.vim'
+
 call plug#end()

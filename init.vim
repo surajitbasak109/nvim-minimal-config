@@ -1,4 +1,4 @@
-source ~/AppData/Local/nvim/plugins.vim
+source ~/.config/nvim/plugins.vim
 
 " Config Section
 
@@ -93,8 +93,8 @@ nmap <leader>w :w<cr>
 set pastetoggle=<leader>v
 
 " edit ~/.config/nvim/init.vim
-map <leader>ev :e! ~/AppData/Local/nvim/init.vim<cr>
-map <leader>ep :e! ~/AppData/Local/nvim/plugins.vim<cr>
+map <leader>ev :e! ~/.config/nvim/init.vim<cr>
+map <leader>ep :e! ~/.config/nvim/plugins.vim<cr>
 " edit gitconfig
 map <leader>eg :e! ~/.gitconfig<cr>
 
@@ -112,6 +112,16 @@ vmap <leader>[ <gv
 vmap <leader>] >gv
 nmap <leader>[ <<
 nmap <leader>] >>
+
+" Tab Navigation
+nnoremap th  :tabfirst<CR>
+nnoremap tk  :tabnext<CR>
+nnoremap tj  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
 
 " switch between current and last buffer
 nmap <leader>. <c-^>
@@ -317,6 +327,29 @@ nmap <silent> <leader>l :wincmd l<CR>
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+
+function! CmdLine(str)
+    call feedkeys(":" . a:str)
+endfunction
+
+function! VisualSelection(direction, extra_filter) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", "\\/.*'$^~[]")
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'gv'
+        call CmdLine("Ack '" . l:pattern . "' " )
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -392,3 +425,63 @@ nmap ++ <plug>NERDCommenterToggle
 """"""""""""""""""""""""""""""
 " Emmet
 let g:user_emmet_leader_key=','
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => lightline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:lightline = {
+            \ 'colorscheme': 'dracula',
+            \ 'active': {
+            \   'left': [ ['mode', 'paste'],
+            \             ['fugitive', 'readonly', 'modified', 'gitbranch', 'absolutepath'] ],
+            \   'right': [ ['cocstatus', 'currentfunction', 'lineinfo' ], ['percent'] ],
+            \ },
+            \ 'component_function': {
+            \   'absolutepath': 'FilenameForLightline',
+            \   'gitbranch': 'gitbranch#name',
+            \   'cocstatus': 'coc#status',
+            \   'currentfunction': 'CocCurrentFunction'
+            \ },
+            \ 'component': {
+            \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+            \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+            \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+            \ },
+            \ 'component_visible_condition': {
+            \   'readonly': '(&filetype!="help"&& &readonly)',
+            \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+            \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+            \ },
+            \ 'separator': { 'left': ' ', 'right': ' ' },
+            \ 'subseparator': { 'left': ' ', 'right': ' ' }
+            \ }
+
+"COC with lightline
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
+" Show full path of filename
+function! FilenameForLightline()
+    return expand('%')
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Ale (syntax checker and linter)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ale_linters = {
+            \   'javascript': ['jshint'],
+            \   'python': ['flake8'],
+            \   'go': ['go', 'golint', 'errcheck'],
+            \   'php': ['php', 'phpcs']
+            \}
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'php': ['phpcbf']
+\}
+
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
