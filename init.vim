@@ -1,4 +1,5 @@
 source ~/.config/nvim/plugins.vim
+" source ~/AppData/Local/nvim/plugins.vim
 
 " Config Section
 
