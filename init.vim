@@ -94,8 +94,13 @@ nmap <leader>w :w<cr>
 set pastetoggle=<leader>v
 
 " edit ~/.config/nvim/init.vim
+" For Linux
 map <leader>ev :e! ~/.config/nvim/init.vim<cr>
 map <leader>ep :e! ~/.config/nvim/plugins.vim<cr>
+
+" For Windows
+map <leader>ev :e! ~/AppData/Local/nvim/init.vim<cr>
+map <leader>ep :e! ~/AppData/Local/nvim/plugins.vim<cr>
 " edit gitconfig
 map <leader>eg :e! ~/.gitconfig<cr>
 
