@@ -275,7 +275,8 @@ if (has("termguicolors"))
  set termguicolors
 endif
 syntax enable
-colorscheme dracula
+"colorscheme dracula
+colorscheme gruvbox
 
 " File Explorer Setting
 let g:NERDTreeShowHidden = 1

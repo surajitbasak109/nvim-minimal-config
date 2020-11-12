@@ -2,6 +2,7 @@ call plug#begin("~/.vim/plugged")
 	" Plugin Section
 	" Theme
 	Plug 'dracula/vim'
+  Plug 'morhetz/gruvbox'
 
 	"File Explorer
 	Plug 'scrooloose/nerdtree'
