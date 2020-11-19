@@ -42,7 +42,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'editorconfig/editorconfig-vim'
 
   " Prettier
-  Plug 'prettier/vim-prettier',  { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+  Plug 'prettier/vim-prettier',  { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'lua', 'php', 'python', 'ruby', 'swift'] }
   let g:prettier#autoformat = 0
   autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
@@ -68,5 +68,10 @@ call plug#begin("~/.vim/plugged")
 
   " Lightline
   Plug 'itchyny/lightline.vim'
+
+  Plug 'airblade/vim-gitgutter'
+
+  "Indentation Guide
+  Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()

@@ -1,8 +1,7 @@
-source ~/.config/nvim/plugins.vim
-" source ~/AppData/Local/nvim/plugins.vim
+" source ~/.config/nvim/plugins.vim
+source ~/AppData/Local/nvim/plugins.vim
 
 " Config Section
-
 set nocompatible            " not compatible with vi
 set autoread                " detect when a file is changed
 
@@ -22,6 +21,10 @@ set showbreak=…             " show ellipsis at breaking
 
 set autoindent              " automatically set indent of new line
 set smartindent
+
+set matchpairs+=<:>
+let g:matchparen_timeout = 2
+let g:matchparen_insert_timeout = 2
 
 " toggle invisible characters
 set list
@@ -53,7 +56,6 @@ set showcmd                 " show incomplete commands
 set noshowmode              " don't show which mode disabled for PowerLine
 set wildmode=list:longest   " complete files like a shell
 set scrolloff=3             " lines of text around cursor
-set shell=$SHELL
 set cmdheight=1             " command bar height
 set title                   " set terminal title
 
@@ -95,8 +97,8 @@ set pastetoggle=<leader>v
 
 " edit ~/.config/nvim/init.vim
 " For Linux
-map <leader>ev :e! ~/.config/nvim/init.vim<cr>
-map <leader>ep :e! ~/.config/nvim/plugins.vim<cr>
+" map <leader>ev :e! ~/.config/nvim/init.vim<cr>
+" map <leader>ep :e! ~/.config/nvim/plugins.vim<cr>
 
 " For Windows
 map <leader>ev :e! ~/AppData/Local/nvim/init.vim<cr>
@@ -281,8 +283,8 @@ if (has("termguicolors"))
 endif
 syntax enable
 "colorscheme dracula
-"colorscheme gruvbox
-colorscheme toast
+colorscheme gruvbox
+"colorscheme toast
 
 " File Explorer Setting
 let g:NERDTreeShowHidden = 1
@@ -483,13 +485,16 @@ let g:ale_linters = {
             \   'go': ['go', 'golint', 'errcheck'],
             \   'php': ['php', 'phpcs']
             \}
-let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
-
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
-\   'php': ['phpcbf']
-\}
+let b:ale_fixers = {
+    \    'php': ['phpcbf'],
+    \    'javascript': ['prettier', 'eslint'],
+    \}
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
+
+let g:indent_guides_enable_on_vim_startup = 1
+let g:prettier#autoformat = 0
+
+source ~/AppData/Local/nvim/blade.vim
+"source ~/.config/nvim/blade.vim
