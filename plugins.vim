@@ -72,6 +72,14 @@ call plug#begin("~/.vim/plugged")
   Plug 'airblade/vim-gitgutter'
 
   "Indentation Guide
-  Plug 'nathanaelkane/vim-indent-guides'
+  "Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'Yggdroot/indentLine'
+
+  "Ack
+  Plug 'mileszs/ack.vim'
+
+  Plug 'storyn26383/vim-vue'
+
+  Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()

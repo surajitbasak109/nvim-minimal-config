@@ -1,5 +1,8 @@
-" source ~/.config/nvim/plugins.vim
-source ~/AppData/Local/nvim/plugins.vim
+" Silverlight (Ag) support:
+" Installing https://github.com/ggreer/the_silver_searcher
+
+source ~/.config/nvim/plugins.vim
+" source ~/AppData/Local/nvim/plugins.vim
 
 " Config Section
 set nocompatible            " not compatible with vi
@@ -18,9 +21,14 @@ set wrap                    " turn on line wrapping
 set wrapmargin=8            " wrap lines when coming within n characters from side
 set linebreak               " set soft wrapping
 set showbreak=…             " show ellipsis at breaking
+"set cursorline              " Underlining the current line
+"set cursorcolumn           " Highlight the current column
 
-set autoindent              " automatically set indent of new line
-set smartindent
+" set autoindent              " automatically set indent of new line
+" set smartindent
+
+" helper for indent mistake
+set list listchars=tab:»·,trail:·
 
 set matchpairs+=<:>
 let g:matchparen_timeout = 2
@@ -97,12 +105,12 @@ set pastetoggle=<leader>v
 
 " edit ~/.config/nvim/init.vim
 " For Linux
-" map <leader>ev :e! ~/.config/nvim/init.vim<cr>
-" map <leader>ep :e! ~/.config/nvim/plugins.vim<cr>
+map <leader>ev :e! ~/.config/nvim/init.vim<cr>
+map <leader>ep :e! ~/.config/nvim/plugins.vim<cr>
 
 " For Windows
-map <leader>ev :e! ~/AppData/Local/nvim/init.vim<cr>
-map <leader>ep :e! ~/AppData/Local/nvim/plugins.vim<cr>
+" map <leader>ev :e! ~/AppData/Local/nvim/init.vim<cr>
+" map <leader>ep :e! ~/AppData/Local/nvim/plugins.vim<cr>
 " edit gitconfig
 map <leader>eg :e! ~/.gitconfig<cr>
 
@@ -283,8 +291,11 @@ if (has("termguicolors"))
 endif
 syntax enable
 "colorscheme dracula
-colorscheme gruvbox
+"colorscheme gruvbox
 "colorscheme toast
+
+set background=dark
+colorscheme palenight
 
 " File Explorer Setting
 let g:NERDTreeShowHidden = 1
@@ -493,8 +504,23 @@ let b:ale_fixers = {
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
 
-let g:indent_guides_enable_on_vim_startup = 1
+" ack.vim Settings
+cnoreabbrev Ack Ack!
+" Shortcut for `:Ack! ` as `<Leader>a`
+nnoremap <Leader>a :Ack!<Space>
+let g:ackhighlight = 1                              " hightlight matches
+let g:ackprg = 'ag --nogroup --nocolor --column'    " Ag support
+
+" indentLine Settings (if it is used)
+"let g:indentLine_setConceal = 0                     " don't override conceal settings
+
+" vim-indent-guides Settings (if it is used)
+"let g:indent_guides_enable_on_vim_startup = 1       " enable IndentGuides by default, otherwise you can toggle it as `:IndentGuidesToggle`
+
+let g:indentLine_setColors = 0
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
 let g:prettier#autoformat = 0
 
-source ~/AppData/Local/nvim/blade.vim
-"source ~/.config/nvim/blade.vim
+" source ~/AppData/Local/nvim/blade.vim
+source ~/.config/nvim/blade.vim
