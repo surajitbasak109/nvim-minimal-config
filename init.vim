@@ -553,7 +553,7 @@ autocmd Filetype json let g:indentLine_setConceal = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim Prettier
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.yaml PrettierAsync:w
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.yaml,*.html,*.vue PrettierAsync:w
 let g:prettier#autoformat = 0
 
 nnoremap gp :silent %!prettier --stdin-filepath %<CR>
