@@ -20,7 +20,7 @@ call plug#begin("~/.vim/plugged")
 
 	" IntelliSense and Syntax Highlighting
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-cssmodules', 'coc-eslint', 'coc-explorer', 'coc-phpactor', 'coc-phpls', 'coc-stylelint', 'coc-snippets', 'coc-sql', 'coc-tailwindcss', 'coc-pairs', 'coc-yank']
+	let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-cssmodules', 'coc-eslint', 'coc-explorer', 'coc-phpactor', 'coc-phpls', 'coc-stylelint', 'coc-snippets', 'coc-sql', 'coc-tailwindcss', 'coc-pairs', 'coc-yank']
 
 	Plug 'ggreer/the_silver_searcher'
 
@@ -42,9 +42,7 @@ call plug#begin("~/.vim/plugged")
   Plug 'editorconfig/editorconfig-vim'
 
   " Prettier
-  "Plug 'prettier/vim-prettier',  { 'tag': '0.2.6', 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'lua', 'php', 'python', 'ruby', 'swift'] }
-  "let g:prettier#autoformat = 0
-  "autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync:w
+  Plug 'prettier/vim-prettier',  { 'tag': '0.2.6', 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html', 'lua', 'php', 'python', 'ruby', 'swift'] }
 
   " Emmet Plugin
   Plug 'mattn/emmet-vim'
@@ -81,5 +79,8 @@ call plug#begin("~/.vim/plugged")
   Plug 'storyn26383/vim-vue'
 
   Plug 'drewtempelmeyer/palenight.vim'
+
+  "For VueJS
+  Plug 'neoclide/coc-vetur'
 
 call plug#end()

@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/techcet/code/vue-quote-machine/src'
 let g:netrw_dirhist_5='C:\Users\suraj\development\job-portal\public\js'
 let g:netrw_dirhist_4='C:\Users\suraj\development\job-portal\resources\views\auth'
 let g:netrw_dirhist_3='C:/Users/suraj/development'

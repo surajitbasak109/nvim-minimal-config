@@ -1,6 +1,5 @@
 " Silverlight (Ag) support:
 " Installing https://github.com/ggreer/the_silver_searcher
-
 source ~/.config/nvim/plugins.vim
 " source ~/AppData/Local/nvim/plugins.vim
 
@@ -491,26 +490,55 @@ endfunction
 " => Ale (syntax checker and linter)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
-            \   'javascript': ['jshint'],
-            \   'python': ['flake8'],
-            \   'go': ['go', 'golint', 'errcheck'],
-            \   'php': ['php', 'phpcs']
-            \}
-let b:ale_fixers = {
-    \    'php': ['phpcbf'],
-    \    'javascript': ['prettier', 'eslint'],
-    \}
+\   'javascript': ['jslint'],
+\   'python': ['flake8'],
+\   'go': ['go', 'golint', 'errcheck'],
+\   'php': ['php', 'phpcs'],
+\}
+
+" Disabling highlighting
+let g:ale_set_highlights = 1
+
+" Only run linting when saving the file
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+
+" Fix files with prettier, and then ESLint.
+let b:ale_fixers = ['prettier', 'eslint']
+
+let g:ale_fixers = {
+\   'css': ['prettier'],
+\   'javascript': ['prettier', 'eslint'],
+\   'html': ['prettier'],
+\   'vue': ['prettier'],
+\}
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'php': ['phpcbf'],
+\}
+
+set omnifunc=ale#completion#OmniFunc
+let g:ale_completion_autoimport = 1
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
+let g:ale_disable_lsp = 1
+let g:airline#extensions#ale#enabled = 1
 
-" ack.vim Settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ack.vim Settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 cnoreabbrev Ack Ack!
 " Shortcut for `:Ack! ` as `<Leader>a`
 nnoremap <Leader>a :Ack!<Space>
 let g:ackhighlight = 1                              " hightlight matches
 let g:ackprg = 'ag --nogroup --nocolor --column'    " Ag support
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Indent Line
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " indentLine Settings (if it is used)
 "let g:indentLine_setConceal = 0                     " don't override conceal settings
 
@@ -519,8 +547,17 @@ let g:ackprg = 'ag --nogroup --nocolor --column'    " Ag support
 
 let g:indentLine_setColors = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:vim_json_syntax_conceal = 0
+autocmd Filetype json let g:indentLine_setConceal = 0
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim Prettier
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.yaml PrettierAsync:w
 let g:prettier#autoformat = 0
+
+nnoremap gp :silent %!prettier --stdin-filepath %<CR>
+
 
 " source ~/AppData/Local/nvim/blade.vim
 source ~/.config/nvim/blade.vim
