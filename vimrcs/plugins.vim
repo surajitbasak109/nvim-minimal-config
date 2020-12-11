@@ -83,4 +83,8 @@ call plug#begin("~/.vim/plugged")
   "For VueJS
   Plug 'neoclide/coc-vetur'
 
+  "Ranger
+  Plug 'francoiscabrol/ranger.vim'
+  Plug 'rbgrouleff/bclose.vim'
+
 call plug#end()
