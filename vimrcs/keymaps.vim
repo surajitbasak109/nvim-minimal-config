@@ -159,3 +159,4 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
 tnoremap <Esc> <C-\><C-n>
+nnoremap <Leader>a :Ack!<Space>
