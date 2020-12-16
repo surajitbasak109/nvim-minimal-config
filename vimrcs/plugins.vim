@@ -6,7 +6,8 @@ call plug#begin("~/.vim/plugged")
   " Soothing color scheme for your favorite [best] text editor
   Plug 'drewtempelmeyer/palenight.vim'
 
-  "Show files on startup screen
+  "Vim Startify
+  "The fancy start screen for Vim.
   Plug 'mhinz/vim-startify'
 
 	" File Explorer
@@ -103,6 +104,10 @@ call plug#begin("~/.vim/plugged")
   "Ranger
   Plug 'francoiscabrol/ranger.vim'
   Plug 'rbgrouleff/bclose.vim'
+
+  "Auto pairs
+  "Vim plugin, insert or delete brackets, parens, quotes in pair
+  Plug 'jiangmiao/auto-pairs'
 
 	" Tailwind CSS
 	Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
