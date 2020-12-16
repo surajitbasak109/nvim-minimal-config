@@ -26,6 +26,7 @@ call plug#begin("~/.vim/plugged")
 	" File Searching
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'junegunn/fzf.vim'
+  Plug 'rking/ag.vim'
 
   " BufExplorer
   Plug 'jlanzarotta/bufexplorer'
