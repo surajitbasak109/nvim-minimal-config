@@ -6,9 +6,13 @@ call plug#begin("~/.vim/plugged")
   " Soothing color scheme for your favorite [best] text editor
   Plug 'drewtempelmeyer/palenight.vim'
 
+  "Show files on startup screen
+  Plug 'mhinz/vim-startify'
+
 	" File Explorer
   " Nerdtree - A tree explorer plugin for vim.
 	Plug 'scrooloose/nerdtree'
+  Plug 'jistr/vim-nerdtree-tabs'
 
   " Devicons
   " Adds file type icons to Vim plugins such as: NERDTree,

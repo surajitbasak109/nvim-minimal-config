@@ -29,4 +29,5 @@ elseif has('win32')
   source ~/AppData/Local/nvim/vimrcs/prettier.vim
   source ~/AppData/Local/nvim/vimrcs/indentline.vim
   source ~/AppData/Local/nvim/vimrcs/coc.vim
+  "let g:python3_host_prog='C:/python3.9/python.exe'
 endif
