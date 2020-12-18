@@ -112,4 +112,8 @@ call plug#begin("~/.vim/plugged")
 	" Tailwind CSS
 	Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
+  "Easy Motion
+  "Vim motions on speed!
+  Plug 'easymotion/vim-easymotion'
+
 call plug#end()
