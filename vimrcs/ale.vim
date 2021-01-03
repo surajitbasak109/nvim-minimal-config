@@ -5,7 +5,7 @@ let g:ale_linters = {
 \   'javascript': ['jslint'],
 \   'python': ['flake8'],
 \   'go': ['go', 'golint', 'errcheck'],
-\   'php': ['php', 'phpcs'],
+\   'php': ['inteliphense'],
 \}
 
 " Disabling highlighting

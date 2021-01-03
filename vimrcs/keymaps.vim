@@ -1,7 +1,7 @@
 " Section Mappings {{{
 
 " set a map leader for more key combos
-let mapleader = ','
+let mapleader = "\<space>"
 " Remap Esc key to jk
 inoremap jk <Esc>
 
@@ -14,7 +14,7 @@ set pastetoggle=<leader>v
 if has('unix')
 " For Linux
   map <leader>ev :e! ~/.config/nvim/init.vim<cr>
-  map <leader>ep :e! ~/.config/nvim/plugins.vim<cr>
+  map <leader>ep :e! ~/.config/nvim/vimrcs/plugins.vim<cr>
   map <leader>ex :e! ~/.config/nvim/<cr>
 elseif has('win32')
   " For Windows
@@ -27,7 +27,7 @@ endif
 map <leader>eg :e! ~/.gitconfig<cr>
 
 " clear highlighted search
-noremap <space> :set hlsearch! hlsearch?<cr>
+noremap <leader><cr> :set hlsearch! hlsearch?<cr>
 
 " markdown to html
 nmap <leader>md :%!markdown --html4tags <cr>

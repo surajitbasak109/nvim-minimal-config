@@ -15,6 +15,7 @@ if has('unix')
   source ~/.config/nvim/vimrcs/indentline.vim
   source ~/.config/nvim/vimrcs/coc.vim
   source ~/.config/nvim/vimrcs/keymaps.vim
+  source ~/.config/nvim/vimrcs/bookmark.vim
 elseif has('win32')
   source ~/AppData/Local/nvim/vimrcs/plugins.vim
   source ~/AppData/Local/nvim/vimrcs/basics.vim
