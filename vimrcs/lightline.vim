@@ -5,8 +5,8 @@ let g:lightline = {
             "\ 'colorscheme': 'palenight',
             \ 'colorscheme': 'PaperColor',
             \ 'active': {
-            \   'left': [ ['mode', 'paste'],
-            \             ['fugitive', 'readonly', 'modified', 'gitbranch', 'absolutepath'] ],
+            \   'left': [ ['mode', 'paste', 'fugitive'],
+            \             ['gitbranch', 'readonly', 'modified', 'absolutepath'] ],
             \   'right': [ ['cocstatus', 'currentfunction', 'lineinfo' ], ['percent'] ],
             \ },
             \ 'component_function': {

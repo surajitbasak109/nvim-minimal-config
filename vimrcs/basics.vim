@@ -10,6 +10,7 @@ set directory=~/.vim-tmp
 set number                  " show line numbers
 set relativenumber          " show relative line numbers
 
+set nowrap                  " turn off line wrapping
 "set wrap                    " turn on line wrapping
 set wrapmargin=8            " wrap lines when coming within n characters from side
 set linebreak               " set soft wrapping

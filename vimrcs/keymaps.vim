@@ -57,10 +57,11 @@ nmap <leader>. <c-^>
 " enable . command in visual mode
 vnoremap . :normal .<cr>
 
-map <silent> <C-h> :call functions#WinMove('h')<cr>
-map <silent> <C-j> :call functions#WinMove('j')<cr>
-map <silent> <C-k> :call functions#WinMove('k')<cr>
-map <silent> <C-l> :call functions#WinMove('l')<cr>
+"map <silent> <C-h> :call functions#WinMove('h')<cr>
+"map <silent> <C-j> :call functions#WinMove('j')<cr>
+"map <silent> <C-k> :call functions#WinMove('k')<cr>
+"map <silent> <C-l> :call functions#WinMove('l')<cr>
+map <silent> <C-i> :Buffers<cr>
 
 map <silent> <C-d> <S-y>po
 

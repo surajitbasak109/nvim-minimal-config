@@ -140,5 +140,15 @@ Plug 'easymotion/vim-easymotion'
 "A vim script to provide CamelCase motion through words (fork of inkarkat's camelcasemotion script)
 Plug 'bkad/CamelCaseMotion'
 Plug 'wellle/targets.vim'
+Plug 'alvan/vim-closetag'
+Plug 'tpope/vim-commentary'
+Plug 'csscomb/vim-csscomb'
+Plug 'itchyny/vim-gitbranch'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
+
+" Automatically install missing plugins on startup
+if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+  autocmd VimEnter * PlugInstall | q
+endif
