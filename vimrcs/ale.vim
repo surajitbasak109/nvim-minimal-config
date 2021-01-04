@@ -5,7 +5,7 @@ let g:ale_linters = {
 \   'javascript': ['jslint'],
 \   'python': ['flake8'],
 \   'go': ['go', 'golint', 'errcheck'],
-\   'php': ['inteliphense'],
+\   'php': ['phpls'],
 \}
 
 " Disabling highlighting
@@ -23,6 +23,7 @@ let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \   'html': ['prettier'],
 \   'vue': ['prettier'],
+\   'php': ['phpls'],
 \}
 
 let g:ale_fixers = {

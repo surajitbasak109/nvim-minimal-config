@@ -10,7 +10,7 @@ set directory=~/.vim-tmp
 set number                  " show line numbers
 set relativenumber          " show relative line numbers
 
-set wrap                    " turn on line wrapping
+"set wrap                    " turn on line wrapping
 set wrapmargin=8            " wrap lines when coming within n characters from side
 set linebreak               " set soft wrapping
 set showbreak=…             " show ellipsis at breaking
@@ -97,8 +97,11 @@ syntax enable
 "colorscheme gruvbox
 "colorscheme toast
 
-set background=dark
-colorscheme palenight
+"set background=dark
+"colorscheme palenight
+
+set background=light
+colorscheme PaperColor
 
 " Integrated Terminal
 " turn terminal to normal mode with escape
