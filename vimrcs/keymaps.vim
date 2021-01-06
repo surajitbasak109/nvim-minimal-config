@@ -67,7 +67,7 @@ vnoremap . :normal .<cr>
 "map <silent> <C-l> :call functions#WinMove('l')<cr>
 map <silent> <C-i> :Buffers<cr>
 
-map <silent> <C-d> <S-y>
+map <silent> <C-d> <S-y>p
 
 map <leader>wc :wincmd q<cr>
 
