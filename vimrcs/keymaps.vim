@@ -199,5 +199,11 @@ xmap <silent> ib <Plug>CamelCaseMotion_ib
 omap <silent> ie <Plug>CamelCaseMotion_ie
 xmap <silent> ie <Plug>CamelCaseMotion_ie
 
+set clipboard=unnamedplus
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
+
 imap <silent> <S-Left> <C-o><Plug>CamelCaseMotion_b
 imap <silent> <S-Right> <C-o><Plug>CamelCaseMotion_w
