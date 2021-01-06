@@ -117,6 +117,7 @@ let g:clipboard = {
 
 set background=dark
 colorscheme PaperColor
+"colorscheme palenight
 
 " Integrated Terminal
 " turn terminal to normal mode with escape
