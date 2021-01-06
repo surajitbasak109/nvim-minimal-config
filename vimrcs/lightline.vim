@@ -2,8 +2,7 @@
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-            "\ 'colorscheme': 'palenight',
-            \ 'colorscheme': 'PaperColor',
+            \ 'colorscheme': 'powerlineish',
             \ 'active': {
             \   'left': [ ['mode', 'paste', 'fugitive'],
             \             ['gitbranch', 'readonly', 'modified', 'absolutepath'] ],

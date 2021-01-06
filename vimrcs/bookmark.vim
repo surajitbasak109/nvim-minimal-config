@@ -7,13 +7,13 @@ let g:bookmark_auto_save = 1
 
 let g:bookmark_no_default_key_mappings = 1
 
-nmap <Leader><Leader> <Plug>BookmarkToggle
-nmap <Leader>i <Plug>BookmarkAnnotate
-nmap <Leader>a <Plug>BookmarkShowAll
-nmap <Leader>j <Plug>BookmarkNext
-nmap <Leader>k <Plug>BookmarkPrev
-nmap <Leader>c <Plug>BookmarkClear
-nmap <Leader>x <Plug>BookmarkClearAll
-nmap <Leader>kk <Plug>BookmarkMoveUp
-nmap <Leader>jj <Plug>BookmarkMoveDown
-nmap <Leader>g <Plug>BookmarkMoveToLine
+nmap mm   <Plug>BookmarkToggle
+nmap mi   <Plug>BookmarkAnnotate
+nmap ma   <Plug>BookmarkShowAll
+nmap mj   <Plug>BookmarkNext
+nmap mk   <Plug>BookmarkPrev
+nmap mc   <Plug>BookmarkClear
+nmap mx   <Plug>BookmarkClearAll
+nmap mkk  <Plug>BookmarkMoveUp
+nmap mjj  <Plug>BookmarkMoveDown
+nmap mg   <Plug>BookmarkMoveToLine

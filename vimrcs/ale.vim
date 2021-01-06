@@ -1,6 +1,13 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ale (syntax checker and linter)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ALE (Asynchronous Lint Engine)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 
+let g:ale_fixers = {
+ \ 'javascript': ['eslint']
+ \ }
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+
 let g:ale_linters = {
 \   'javascript': ['jslint'],
 \   'python': ['flake8'],
@@ -36,7 +43,7 @@ let g:ale_completion_autoimport = 1
 
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
-let g:ale_disable_lsp = 1
+"let g:ale_disable_lsp = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_php_phpcbf_standard='PSR2'
 let g:ale_php_phpcs_standard='PSR2'

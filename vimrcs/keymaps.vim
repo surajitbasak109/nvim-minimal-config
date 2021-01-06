@@ -2,6 +2,7 @@
 
 " set a map leader for more key combos
 let mapleader = "\<space>"
+
 " Remap Esc key to jk
 inoremap jk <Esc>
 
@@ -51,6 +52,9 @@ nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 
+" Map yanked to clipboard
+vnoremap <C-c> "*y
+
 " switch between current and last buffer
 nmap <leader>. <c-^>
 
@@ -63,7 +67,7 @@ vnoremap . :normal .<cr>
 "map <silent> <C-l> :call functions#WinMove('l')<cr>
 map <silent> <C-i> :Buffers<cr>
 
-map <silent> <C-d> <S-y>po
+map <silent> <C-d> <S-y>
 
 map <leader>wc :wincmd q<cr>
 
@@ -199,11 +203,5 @@ xmap <silent> ib <Plug>CamelCaseMotion_ib
 omap <silent> ie <Plug>CamelCaseMotion_ie
 xmap <silent> ie <Plug>CamelCaseMotion_ie
 
-set clipboard=unnamedplus
-noremap <Leader>y "*y
-noremap <Leader>p "*p
-noremap <Leader>Y "+y
-noremap <Leader>P "+p
-
-imap <silent> <S-Left> <C-o><Plug>CamelCaseMotion_b
+map <silent> <S-Left> <C-o><Plug>CamelCaseMotion_b
 imap <silent> <S-Right> <C-o><Plug>CamelCaseMotion_w

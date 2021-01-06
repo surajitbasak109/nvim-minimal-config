@@ -2,24 +2,52 @@ call plug#begin("~/.vim/plugged")
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Theme
+"
+" =========================================================
+"                         Theme
+" =========================================================
 " Soothing color scheme for your favorite [best] text editor
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'NLKNguyen/papercolor-theme'
 
+" =========================================================
+"                     File Explorer
+" =========================================================
+" Nerdtree - A tree explorer plugin for vim.
+Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'ryanoasis/vim-devicons'
+
+" =========================================================
+"                     File Searching
+" =========================================================
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'rking/ag.vim'
+
+" =========================================================
+"   Code Completion, IntelliSense and Syntax Highlighting
+" =========================================================
+" IntelliSense and Syntax Highlighting
+" Conquer of Completion (CoC)
+" Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-cssmodules', 'coc-eslint', 'coc-explorer', 'coc-phpactor', 'coc-phpls', 'coc-stylelint', 'coc-snippets', 'coc-sql', 'coc-tailwindcss', 'coc-pairs', 'coc-yank', 'coc-prettier']
+
+" ALE
+" Check syntax in Vim asynchronously and fix files,
+" with Language Server Protocol (LSP) support
+Plug 'dense-analysis/ale'
+
+" Vim Polyglot
+Plug 'sheerun/vim-polyglot'
+
+
 "Vim Startify
 "The fancy start screen for Vim.
 Plug 'mhinz/vim-startify'
-
-" File Explorer
-" Nerdtree - A tree explorer plugin for vim.
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-
-" Devicons
-" Adds file type icons to Vim plugins such as: NERDTree,
-" vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more
-Plug 'ryanoasis/vim-devicons'
 
 " BookMark
 "Action 	Shortcut 	Command
@@ -41,11 +69,6 @@ Plug 'MattesGroeger/vim-bookmarks'
 " Vim plugin for intensely nerdy commenting powers
 Plug 'preservim/nerdcommenter'
 
-" File Searching
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'rking/ag.vim'
-
 " BufExplorer
 Plug 'jlanzarotta/bufexplorer'
 
@@ -53,23 +76,10 @@ Plug 'jlanzarotta/bufexplorer'
 " Automatic resizing of Vim windows to the golden ratio
 Plug 'roman/golden-ratio'
 
-" ALE
-" Check syntax in Vim asynchronously and fix files,
-" with Language Server Protocol (LSP) support
-Plug 'dense-analysis/ale'
-
-" IntelliSense and Syntax Highlighting
-" Conquer of Completion (CoC)
-" Intellisense engine for Vim8 & Neovim, full language server protocol support as VSCode
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-cssmodules', 'coc-eslint', 'coc-explorer', 'coc-phpactor', 'coc-phpls', 'coc-stylelint', 'coc-snippets', 'coc-sql', 'coc-tailwindcss', 'coc-pairs', 'coc-yank', 'coc-prettier']
 
 " TypeScript and TSX Support
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
-
-" Vim Polyglot
-Plug 'sheerun/vim-polyglot'
 
 " Vim Snippet
 Plug 'honza/vim-snippets'
@@ -145,6 +155,7 @@ Plug 'tpope/vim-commentary'
 Plug 'csscomb/vim-csscomb'
 Plug 'itchyny/vim-gitbranch'
 Plug 'pangloss/vim-javascript'
+Plug 'ap/vim-css-color'
 
 call plug#end()
 
