@@ -14,12 +14,12 @@ set pastetoggle=<leader>v
 if has('unix')
 " For Linux
   map <leader>ev :e! ~/.config/nvim/init.vim<cr>
-  map <leader>ep :e! ~/.config/nvim/vimrcs/plugins.vim<cr>
+  map <leader>ep :e! ~/.config/nvim/vimrcs/01_plugins.vim<cr>
   map <leader>ex :e! ~/.config/nvim/<cr>
 elseif has('win32')
   " For Windows
    map <leader>ev :e! ~/AppData/Local/nvim/init.vim<cr>
-   map <leader>ep :e! ~/AppData/Local/nvim/plugins.vim<cr>
+   map <leader>ep :e! ~/AppData/Local/nvim/01_plugins.vim<cr>
    map <leader>ex :e! ~/AppData/Local/nvim/<cr>
 endif
 
@@ -33,7 +33,7 @@ noremap <leader><cr> :set hlsearch! hlsearch?<cr>
 nmap <leader>md :%!markdown --html4tags <cr>
 
 " remove extra whitespace
-nmap <leader><space> :%s/\s\+$<cr>
+"nmap <leader><space> :%s/\s\+$<cr>
 
 " Textmate style indentation
 vmap <leader>[ <gv

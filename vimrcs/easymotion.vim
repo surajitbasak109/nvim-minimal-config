@@ -1,6 +1,6 @@
 " <Leader>f{char} to move to {char}
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
+map  <Leader>z <Plug>(easymotion-bd-f)
+nmap <Leader>z <Plug>(easymotion-overwin-f)
 
 " s{char}{char} to move to {char}{char}
 nmap z <Plug>(easymotion-overwin-f2)
