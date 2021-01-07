@@ -1,5 +1,6 @@
 " Silverlight (Ag) support:
 " Installing https://github.com/ggreer/the_silver_searcher
+"   apt-get install silversearcher-ag
 "
 
 " Awesome Function :)
