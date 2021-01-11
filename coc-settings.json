@@ -5,10 +5,15 @@
     "typescriptreact",
     "json",
     "javascriptreact",
-    "typescript.tsx"
+    "typescript.tsx",
+    "css",
+    "html",
+    "markdown",
+    "php",
+    "vue",
+    "jsx"
   ],
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "php", "html", "python", "vue", "jsx"],
   "coc.preferences.diagnostic.virtualText": true,
   "diagnostic.displayByAle": true
 }

@@ -18,7 +18,7 @@ set showbreak=…             " show ellipsis at breaking
 "set cursorline              " Underlining the current line
 "set cursorcolumn           " Highlight the current column
 
-" set autoindent              " automatically set indent of new line
+ set autoindent              " automatically set indent of new line
 " set smartindent
 
 " helper for indent mistake
@@ -102,18 +102,18 @@ syntax enable
 "colorscheme palenight
 
 " Clipboard Settings
-let g:clipboard = {
-\   'name': 'myClipboard',
-\   'copy': {
-\      '+': 'tmux load-buffer -',
-\      '*': 'tmux load-buffer -',
-\    },
-\   'paste': {
-\      '+': 'tmux save-buffer -',
-\      '*': 'tmux save-buffer -',
-\   },
-\   'cache_enabled': 1,
-\ }
+"let g:clipboard = {
+"\   'name': 'myClipboard',
+"\   'copy': {
+"\      '+': 'tmux load-buffer -',
+"\      '*': 'tmux load-buffer -',
+"\    },
+"\   'paste': {
+"\      '+': 'tmux save-buffer -',
+"\      '*': 'tmux save-buffer -',
+"\   },
+"\   'cache_enabled': 1,
+"\ }
 
 set background=dark
 colorscheme PaperColor

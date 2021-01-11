@@ -9,7 +9,7 @@ let g:bookmark_no_default_key_mappings = 1
 
 nmap mm   <Plug>BookmarkToggle
 nmap mi   <Plug>BookmarkAnnotate
-nmap ma   <Plug>BookmarkShowAll
+"nmap ma   <Plug>BookmarkShowAll
 nmap mj   <Plug>BookmarkNext
 nmap mk   <Plug>BookmarkPrev
 nmap mc   <Plug>BookmarkClear

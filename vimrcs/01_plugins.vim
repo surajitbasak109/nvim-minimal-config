@@ -82,6 +82,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
 " Vim Snippet
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Prettier
