@@ -2,6 +2,9 @@
 
 This configuration works in Linux and Wondows Machine.
 
+Click the link for a YouTube guide!
+[Setup Neovim with essential configuration and plugins 2021](https://www.youtube.com/watch?v=Rm-IZRWD1-4)
+
 ## Install Instructions
 
 ### Linux
