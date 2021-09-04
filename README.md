@@ -48,6 +48,9 @@ This configuration works in Linux and Wondows Machine.
 - Easy comment using `++` key combination
 - Faster file opening with `ctrl-p` like VSCode (requires silverline-ag)
 
+### Video Tutorial on Youtube
+[![Setup Neovim with essential configuration and plugins 2021](https://img.youtube.com/vi/Rm-IZRWD1-4/0.jpg)](https://www.youtube.com/watch?v=Rm-IZRWD1-4)
+
 ## Installed Plugins
 
 | Plugins                                                                             | Description                                                                                                                                      |
